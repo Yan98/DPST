@@ -65,7 +65,7 @@ python main.py --help
 ## Todo
 
 - [ ] Upload pretrained checkpoints
-- [ ] Upload testing script
+- [ ] Upload testing script for PSM in diffirent organizations
 
 ## Notice
 Code is only tested on x86_64 x86_64 x86_64 GNU/Linux
