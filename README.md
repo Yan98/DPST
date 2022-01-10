@@ -67,6 +67,9 @@ python main.py --help
 - [ ] Upload pretrained checkpoints
 - [ ] Upload testing script
 
+## Notice
+Code is only tested on x86_64 x86_64 x86_64 GNU/Linux
+
 ## License
 The dataset loading is based on PointNovo's implementation: https://github.com/volpato30/DeepNovoV2
 
