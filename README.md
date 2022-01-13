@@ -21,6 +21,7 @@ We follow the same data preprocessing pipline as [PointNovo](https://github.com/
 ## Train DPST
 
 * Please run `main.py`, while set the parameters properly. e.g. `python3 main.py --local_attn --global_attn  --value_attn --first 4 --ape --output f0e --fold 0 --batch 16 --gpus 4 --workers 2 --prefix ENTER_PATH_TO_YOUR_DATASET`
+* It takes 30m - 50m for constructing knapsack_file when running for a first time.
 
 ```bash
 python main.py --help
