@@ -54,7 +54,7 @@ def main(args):
             datasets = DenovoDataset(os.path.join(PREFIX,train,name), logfun = print)
             if "train" in name:
                 train_loader  = DataLoader(datasets,batch_size=args.batch, shuffle= True, num_workers  = args.workers, pin_memory= True, collate_fn = collate_func_denovo, prefetch_factor = 2)                
-            elif "valid" in name:
+            elif "valid" in name: #elif "test" in name:
                 test_loader  = DataLoader(datasets,batch_size=args.batch, shuffle= True, num_workers  = args.workers, pin_memory= True, collate_fn = collate_func_denovo, prefetch_factor = 2)
         
         #For testing on diffirent organization
