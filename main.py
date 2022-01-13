@@ -10,6 +10,7 @@ import os
 import pytorch_lightning as pl 
 from functools import partial
 from argparse import ArgumentParser
+import collections
 
 dataname     =[
     ("cross.9high_80k.exclude_bacillus/",     "high.bacillus.PXD004565/"), #Bacillus
@@ -80,18 +81,9 @@ def main(args):
         if args.checkpoints != None:
             model.load_state_dict(torch.load(args.checkpoints,map_location = torch.device("cpu")))
             
-        #CONFIG = collections.namedtuple('CONFIG', ['lr', 'logfun', 'pad_index', 'verbose_step', 'weight_decay', 'store_dir'])
-        #config = CONFIG(args.lr, print, datasets.vocab.pad_index, args.verbose_step, args.weight_decay,store_dir)
+        CONFIG = collections.namedtuple('CONFIG', ['lr', 'logfun', 'pad_index', 'verbose_step', 'weight_decay', 'store_dir'])
+        config = CONFIG(args.lr, print, datasets.vocab.pad_index, args.verbose_step, args.weight_decay,store_dir)
         
-        class config:
-            def __init__(self):
-                self.lr = args.lr
-                self.logfun = print
-                self.pad_index = datasets.vocab.pad_index
-                self.verbose_step = args.verbose_step
-                self.weight_decay = args.weight_decay
-                self.store_dir = store_dir
-        config = config()
         model = TrainerModel(config, model)
         plt = pl.Trainer(max_epochs = args.epoch,num_nodes=args.num_nodes, gpus=args.gpus,accelerator= args.acce, val_check_interval = args.val_interval,  profiler= args.profiler)
         plt.fit(model,train_dataloaders=train_loader,val_dataloaders=test_loader)

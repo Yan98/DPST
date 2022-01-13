@@ -330,7 +330,7 @@ class TrainerModel(pl.LightningModule):
     @property
     def num_training_steps(self) -> int:
         """Total training steps inferred from datamodule and devices."""
-        dataset = self.train_dataloader()
+        dataset = self.trainer._data_connector._train_dataloader_source.dataloader()  #self.train_dataloader()
         num_devices = max(1, self.trainer.num_gpus, self.trainer.num_processes) * self.trainer.num_nodes
         return len(dataset) // num_devices
         
