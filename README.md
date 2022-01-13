@@ -20,7 +20,7 @@ We follow the same data preprocessing pipline as [PointNovo](https://github.com/
 
 ## Train DPST
 
-* Please run `main.py`, while set the parameters properly.
+* Please run `main.py`, while set the parameters properly. e.g. 'python3 main.py --local_attn --global_attn  --value_attn --first 4 --ape --output f0e --fold 0 --batch 16 --gpus 4 --workers 2 --prefix ENTER_PATH_TO_YOUR_DATASET'
 
 ```bash
 python main.py --help
