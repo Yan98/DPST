@@ -6,15 +6,6 @@ import csv
 import re
 from dataclasses import dataclass
 
-PREFIX = None ### To be set
-
-if PREFIX == None:
-    raise SystemExit("Please set path prefix")
-
-denovo_path = [
-    ("cross.cat.mgf.test.repeat","high.bacillus.PXD004565"),
-    ]
-
 @dataclass
 class Feature:
     spec_id: str
