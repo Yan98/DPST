@@ -1,5 +1,5 @@
 # DPST : De Novo Peptide Sequencing with Amino-Acid-Aware Transformers - Pytorch Implementation
-![](doc/PSM.png)
+![](PSM.png)
 
 ## Dependency
 * python 3.9.4
